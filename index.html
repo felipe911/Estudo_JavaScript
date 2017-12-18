@@ -125,21 +125,54 @@
 </script>
 
 <h3>Em Javascript, se você tentar somar qualquer numero com uma string, o número será transformado em String também.
-Por isso é necessário ficar bem atento quanto aos tipos de dados do JavaScript. (Bugado)</h3>
+Por isso é necessário ficar bem atento quanto aos tipos de dados do JavaScript.(bugado)</h3>
 
-<p>Vamos tentar fazer uma soma maluca de um numero com uma string, insira o Numero:</p>
+<p>Vamos tentar fazer uma soma maluca de um numero com a string JavaScript, insira o Numero:</p>
 <input id="n1" type="number"> + JavaScript = <output id="resultado" type="text" disabled="disabled">
 <button onclick="somaNumerosComString()">Calcular</button>
 <script>
 	function somaNumerosComString(){
-		var x1 = n1;
-		var result;
-		result = x1 + "JavaScript"
-		document.getElementById('resultado').value = result; 
+		var x = document.getElementById('n1').value + " JavaScript";
+		document.getElementById("resultado").innerHTML = x;
+	}
+</script>
+
+<h3>Os tipos de dados em JavaScript são bastantes dinâmicos, você pode por exemplo simplesmente declarar uma variável sem um tipo de
+	dado(ele ficará undefined) e poderá alterar depois, não é recomendado fazer isso de acordo com as boas práticas de programação.</h3>
+	<p id="var1">var = x;</p>
+	<p id="var2">var x = 5;</p>
+	<p id="var3">var x = "Joao"</p>
+	<button onclick="verificaTipo2()">Verificar Tipo de Dado</button>
+	<script>
+		function verificaTipo2(){
+			var x;
+			document.getElementById('var1').innerHTML = typeof x;
+			var x = 5;
+			document.getElementById('var2').innerHTML = typeof x;
+			var x = "Joao";
+			document.getElementById('var3').innerHTML = typeof x;
+		}
+	</script>
+
+<h3>Uma variavel que será string recebe seu dado com aspas simples ou aspas duplas</h3>
+<p>Exemplos:</p>
+<p>var x = "João"</p>
+<p>var x = 'João'</p>
+<p>Isso não vai influenciar em nada, mas pelas boas práticas de programação, sempre que for colocar um dado em uma string
+	o recomendável é utilizar aspas duplas (" ").
+</p>
+
+<h3>Para referenciar um dado que em sua string contenha aspas, exemplo: Anderson "Spider" Silva, devemos nesse caso, sobrepor
+	as aspas, ficaria mais ou menos assim: var x = 'Anderson "Spider" Silva'
+</h3>
+<p id="nomeUFC">Anderson Spider Silva</p>
+<button onclick="colocaAspas()">Colocar Aspas</button>
+<script>
+	function colocaAspas(){
+		var x = 'Anderson "Spider" Silva'
+		document.getElementById('nomeUFC').innerHTML = x;
 	}
 </script>
 
 </body>
-
-
 </html> 
