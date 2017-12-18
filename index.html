@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<body>
+<head>
+<meta charset="utf-8">
+</head>
+<style>
+	h3{ color: red;
+	}
+</style>
+
+<h1>Estudos com JavaScript (V.1)</h1>
+<h2>Este estudo tem como base o site www.w3schools.com para início de aprendizado da linguagem JavaScript,
+	para facilitar, colocarei descrições bem explicadas para cada função visando o melhor entendimento da linguagem.
+</h2>
+
+<h3>A propriedade "innerHTML" define ou obtém a sintaxe HTML descrevendo os elementos descendentes. A propriedade Date() retorna a data e hora. </h3>
+
+
+<button type="button" onclick="document.getElementById('teste1').innerHTML = Date()">Mostrar Data e Hora</button>
+<p id="teste1"></p>
+<p> ------------------------------- </p>
+
+
+<button type="button" onclick='document.getElementById("teste2").innerHTML = "Hello JavaScript!"'>Trocar texto</button>
+<p id="teste2">O texto será trocado !</p>
+<p> ------------------------------- </p>
+
+<h3>Podemos trocar uma imagem utilizando dois botões com a opção SRC </h3>
+<button onclick="document.getElementById('lampada').src='imagens/lampada_acessa.jpg'">Acender</button>
+<img id="lampada" src="imagens/lampada_apagada.jpg" style="width:100px">
+<button onclick="document.getElementById('lampada').src='imagens/lampada_apagada.jpg'">Apagar</button>
+<p> ------------------------------- </p>
+
+<h3>Podemos fazer o mesmo "efeito" com apenas um botão e usando uma function, no nosso caso essa function chama-se 
+"mudaLampada()". </h3>
+<img id="lampada1" src="imagens/lampada_apagada.jpg" style="width:100px">
+<button onclick="mudaLampada()">Acender e Apagar </button>
+<script type="text/javascript">
+	var flag = 0;
+	function mudaLampada(){
+		var img = document.getElementById('lampada1');
+		if(flag === 0){
+			img.src = 'imagens/lampada_acessa.jpg'
+			flag = 1;
+		} else if (flag === 1){
+			img.src = 'imagens/lampada_apagada.jpg'
+			flag = 0 ;
+		}
+	}
+</script>
+<p> ------------------------------- </p>
+<p id="teste3">Ola Mundo </p>
+<button onclick="document.getElementById('teste3').style.fontSize = '40px'"> Mudar Fonte </button>
+<button onclick="document.getElementById('teste3').style.display = 'none'"> Esconder </button>
+<button onclick="document.getElementById('teste3').style.display = 'block'"> Aparecer </button>
+
+
+<h3>Fazendo calculo no proprio html utilizando elementos com tags</h3>
+<p id="teste4"></p>
+<button onclick="document.getElementById('teste4').innerHTML = 5 + 5 ">Calcular </button>
+<p> ------------------------------- </p>
+<h3>Se não quiser utilizar botão, será mais conveniente utilizar document.write()</h3>
+<script>
+	document.write(5 + 5);
+</script>
+
+<h3>Usando o document.write() depois que o HTML for totalmente carregado, ele deletará to Html existente
+
+<h1>Ola Mundo</h1>
+<p>Vamos testar se irá mesmo apagar !</p>
+<p>LEMBRE-SE, esse método tem essa funcionalidade para fazer testes apenas.... </p> 
+<button onclick="document.write(5 + 6)">Tente !</button>
+
+<p> ------------------------------- </p>
+
+<h3> Gerando um alerta usando window.alert() dentro de uma function... </h3>
+<button onclick="alerta()"> Alerta ! </button>
+<script>
+	function alerta(){
+		window.alert('ALERTA');
+	}
+</script>
+
+
+<p> ------------------------------- </p>
+
+<h3> Utilizando console.log() para fazer testes, o valor desse método só é exibido no console do browser (aperte F12 ou abra o console de seu browser). </h3>
+<script>
+	console.log(5 + 6);
+</script>
+
+<p>Geralmente ele é usado apenas para fazer algum debug ou teste no codigo. </p>
+
+<p> ------------------------------- </p>
+
+<h3>Podemos "escrever" no Html utilizando javascript: </h3>
+
+<h1 id="meuH"></h1>
+<p id="meuP"></p>
+
+<script>
+	document.getElementById("meuH").innerHTML = "My First Page";
+	document.getElementById("meuP").innerHTML = "My first paragraph.";
+</script>
+* Para ver o código, utilizar Inspecionar Elemento
+
+<p> ------------------------------- </p>
+
+<h3>Para sabermos o tipo de uma variavel podemos utilizar o typeof</h3>
+
+<button onclick="verificaTipo()">Verificar Tipo</button>
+<p id="teste5">John</p>
+<p id="teste6">5</p>
+<p id="teste7">7</p>
+
+<script>
+	function verificaTipo(){
+		var teste5 = "John"
+		var teste7 = 7;
+		document.getElementById("teste5").innerHTML = typeof teste5;
+		document.getElementById("teste6").innerHTML = typeof teste6;
+		document.getElementById("teste7").innerHTML = typeof teste7;
+	}
+</script>
+
+<h3>Em Javascript, se você tentar somar qualquer numero com uma string, o número será transformado em String também.
+Por isso é necessário ficar bem atento quanto aos tipos de dados do JavaScript. (Bugado)</h3>
+
+<p>Vamos tentar fazer uma soma maluca de um numero com uma string, insira o Numero:</p>
+<input id="n1" type="number"> + JavaScript = <output id="resultado" type="text" disabled="disabled">
+<button onclick="somaNumerosComString()">Calcular</button>
+<script>
+	function somaNumerosComString(){
+		var x1 = n1;
+		var result;
+		result = x1 + "JavaScript"
+		document.getElementById('resultado').value = result; 
+	}
+</script>
+
+</body>
+
+
+</html> 
