@@ -107,3 +107,25 @@ function calcMedia(){
 	var x = parseFloat(n1 + n2) / 2;
 	document.getElementById("resultadoMedia").innerHTML = x;
 }
+
+
+function paraGrauCelcius(k){
+	return (5/9) * (k-32);
+}
+document.getElementById("grau").innerHTML = parseFloat(paraGrauCelcius(100).toFixed(2)) + " Graus Celsius";
+
+
+function concatenaPessoa(){
+	var pessoa = {	nome: "Felipe",
+					idade: 26,
+					faculdade: "Fatec",
+					sobrenome: "Augusto",
+					nomeCompleto: function(){
+						return this.nome + " " + this.sobrenome}
+				};
+
+	document.getElementById("objPessoa").innerHTML = "Este é o " + pessoa.nomeCompleto() + " ele tem "
+	+ pessoa.idade + " anos" + " e " + "estuda na " + pessoa.faculdade; 
+
+
+}

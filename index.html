@@ -9,7 +9,8 @@
 <h1>Estudos com JavaScript (V.1)</h1>
 <h2>Este estudo tem como base o site www.w3schools.com para início de aprendizado da linguagem JavaScript,
 	para facilitar, colocarei descrições bem explicadas para cada função visando o melhor entendimento da linguagem.
-	As funções em JavaScript estão neste mesmo arquivo para facilidade de aprendizado.
+	Inicialmente como se trata de um arquivo para fins de aprendizado, nenhum design mais amigável e "bonito" será criado, em outras versões
+	o refinamento será atingido.
 </h2>
 
 <h3>A propriedade "innerHTML" define ou obtém a sintaxe HTML descrevendo os elementos descendentes. A propriedade Date()
@@ -146,8 +147,9 @@ Numero 2: <input id="numero2" type="number">
 Posição: <input id="numArray" type="number"> <button onclick="verificaPosicaoArray()">Verificar posição no Array</button> <p id="verArray"></p>
 
 
-<h3>JavaScript também é uma linguagem orientada a objetos, portanto podemos definir objetos com atributos e 
-	métodos, nesse exemplo definiremos um objeto com 5 atributos</h3>
+<h3>Objetos em JavaScript possuem coleções dinâmicas de chaves e valores de qaulquer tipo de dado, é possível
+	adicionar ou remover propriedades a qualquer momento.
+</h3>
 
 	<p>Exemplo:</p>
 	<p>var Carro = {marca="Toyota", ano="2017", preco="40.000", cor="branco", modelo="etios"}</p>
@@ -165,8 +167,8 @@ Posição: <input id="numArray" type="number"> <button onclick="verificaPosicaoA
 	Novo Modelo: <input id="novoModelo" type="text">
 	<button onclick="mudarAtributosCarro()">Mudar Atributos</button>
 
-<h3>Uma função em JavaScript deve ser chamada junto com parenteses () para executar, ela pode ou não retornar valores 
-	bem como pode-se ou não passar valores para ela.
+<h3>Uma função em JavaScript deve ser chamada junto com parenteses () para executar, ela pode ou não
+	retornar valores  bem como pode-se ou não passar valores para ela.
 </h3>
 
 <p>Exemplos:</p>
@@ -177,7 +179,30 @@ Posição: <input id="numArray" type="number"> <button onclick="verificaPosicaoA
 <button onclick="calcMedia()">Calcular média</button>
 <p id="resultadoMedia"></p>
 
+<p>Transformando 100 graus Fahrenheit em X graus Celcius</p>
+<p>(função COM passagem de parâmetros)</p>
+<p id="grau"></p>
+
+<h3>Vamos descrever métodos para um objeto chamado Pessoa e colocar seus atributos em uma String</h3>
+<p>Seu nome é Felipe, sobrenome Augusto, tem 26 anos e estuda na Fatec</p>
+
+<p id="objPessoa"></p>
+<button onclick="concatenaPessoa()">Concatenar</button>
+
+<h3>Pode-se acessar objetos chamando o objeto e sua propriedade.</h3>
+<p>Exemplo: </p>
+<p>pessoa.nome</p>
+<p>pessoa.idade</p>
+<p>pessoa.nomeCompleto()</p>
+ou talvez dessa forma:
+<p>pessoa["nome"]</p>
+<p>pessoa["idade"]</p>
+
+Também podemos atribuir a uma variável:
+<p>var aluno = pessoa.nomeCompleto()</p>
+
 </body>
 
 <script type="text/javascript" src="js/javascript.js"></script>
+
 </html> 
