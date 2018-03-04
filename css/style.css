@@ -1,2 +1,35 @@
-h3{ color: red;
+/* Estruturas Básicas */
+
+#corpo{
+    margin: 20px 0 20px 0;
+}
+.bloco{
+    width: 100%;
+    margin: 15px 0 15px 0;
+    border: 5px solid rgb(255, 248, 150);
+    padding: 10px;
+}
+.bloco h3{
+    padding-bottom: 15px
+}
+
+/* Textos */
+
+.destaque-texto{
+    color: red;
+}
+#cabecalho{
+    margin-top: 30px;
+}
+#cabecalho h3{
+    text-align: justify;
+}
+
+/* Exemplos */
+
+.objeto-exemplo{
+    margin-bottom: 10px;
+}
+.objeto-p{
+    text-align: right;
 }

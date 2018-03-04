@@ -1,1 +1,1 @@
-# Estudo_JavaScript
+Este arquivo tem como objetivo, o aprendizado gradual da linguagem JavaScript para nível Básico, conforme a aprendizagem com o tempo, novos exemplos e explicações irão surgir.

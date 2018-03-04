@@ -1,206 +1,268 @@
 <!DOCTYPE html>
-<html>
-<body>
+<html lang="pt-br">
 <head>
-<meta charset="utf-8">
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="shortcut icon" href="imagens/favicon-16x16.png" />
+	
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+	<title>Aprendendo JavaScript</title>
 </head>
+
 <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<body>
+<section id="cabecalho">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<h1>Estudos com JavaScript (V.1.1)</h1>
+				<h3>Este estudo tem como base o site <a href="http:\\www.w3schools.com">www.w3schools.com</a> para início de aprendizado da linguagem <span class="destaque-texto">JavaScript</span>,
+					para facilitar, colocarei descrições o mais simples possível, visando o melhor entendimento da linguagem.
+					Inicialmente como se trata de um arquivo para fins de aprendizado, nenhum design mais amigável e "bonito" será criado.
+					Para as próximas versões o refinamento será atingido.
+				</h3>
+			</div>
+		</div>
+	</div>
+</section>
 
-<h1>Estudos com JavaScript (V.1)</h1>
-<h2>Este estudo tem como base o site www.w3schools.com para início de aprendizado da linguagem JavaScript,
-	para facilitar, colocarei descrições bem explicadas para cada função visando o melhor entendimento da linguagem.
-	Inicialmente como se trata de um arquivo para fins de aprendizado, nenhum design mais amigável e "bonito" será criado, em outras versões
-	o refinamento será atingido.
-</h2>
+<section id="corpo">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="bloco">
+					<h2>Inner HTML e Document Write</h2>
+					<h5>A propriedade "innerHTML" define ou obtém a sintaxe HTML descrevendo os
+						elementos descendentes. A propriedade Date() retorna a data e hora.</h5>
+					<button class="btn btn-warning" type="button" onclick="document.getElementById('teste1').innerHTML = Date()">Mostrar Data e Hora</button>
+					<p id="teste1"></p>
+					
+					<br/>
 
-<h3>A propriedade "innerHTML" define ou obtém a sintaxe HTML descrevendo os elementos descendentes. A propriedade Date()
-	retorna a data e hora. </h3>
+					<button class="btn btn-warning" type="button" onclick='document.getElementById("teste2").innerHTML = "Hello JavaScript!"'>Trocar texto</button>
+					<p id="teste2">O texto será trocado !</p>
 
+					<br/>
 
-<button type="button" onclick="document.getElementById('teste1').innerHTML = Date()">Mostrar Data e Hora</button>
-<p id="teste1"></p>
-<p> ------------------------------- </p>
+					<h5>Realizando cálculo no proprio HTML utilizando elementos com tags</h5>
+					<p id="teste4"></p>
+					<button class="btn btn-warning" onclick="document.getElementById('teste4').innerHTML = 5 + 5 ">Calcular</button>
 
+					<br/><br/>
 
-<button type="button" onclick='document.getElementById("teste2").innerHTML = "Hello JavaScript!"'>Trocar texto</button>
-<p id="teste2">O texto será trocado !</p>
-<p> ------------------------------- </p>
+					<h5>Se não quiser utilizar botão, será mais conveniente utilizar: document.write(5 + 5)</h5>
+					<script>
+						document.write(5 + 5);
+					</script>
 
-<h3>Podemos trocar uma imagem utilizando dois botões com a opção SRC </h3>
-<button onclick="document.getElementById('lampada').src='imagens/lampada_acessa.jpg'">Acender</button>
-<img id="lampada" src="imagens/lampada_apagada.jpg" style="width:100px">
-<button onclick="document.getElementById('lampada').src='imagens/lampada_apagada.jpg'">Apagar</button>
-<p> ------------------------------- </p>
+					<br/><br/>
 
-<h3>Podemos fazer o mesmo "efeito" com apenas um botão e usando uma function, no nosso caso essa function chama-se 
-"mudaLampada()". </h3>
-<img id="lampada1" src="imagens/lampada_apagada.jpg" style="width:100px">
-<button onclick="mudaLampada()">Acender e Apagar </button>
+					<h5>Usando o document.write() depois que o HTML for totalmente carregado, ele deletará o HTML existente</h5>
+					<p>* <span class="destaque-texto" >LEMBRE-SE</span>, esse método tem essa funcionalidade para fazer testes apenas.... </p> 
+					<button class="btn btn-warning" onclick="document.write(5 + 6)">Tente !</button>
+				</div>
 
+				<div class="bloco">
+					<h2>SRC</h2>
+					<h5>Podemos trocar uma imagem utilizando dois botões com a opção SRC </h5>
+					<button class="btn btn-warning" onclick="document.getElementById('lampada').src='imagens/lampada_acessa.jpg'">Acender</button>
+					<img id="lampada" src="imagens/lampada_apagada.jpg" style="width:100px">
+					<button class="btn btn-warning" onclick="document.getElementById('lampada').src='imagens/lampada_apagada.jpg'">Apagar</button>
+					
+					<br/>
 
-<p> ------------------------------- </p>
-<p id="teste3">Ola Mundo </p>
-<button onclick="document.getElementById('teste3').style.fontSize = '40px'"> Mudar Fonte </button>
-<button onclick="document.getElementById('teste3').style.display = 'none'"> Esconder </button>
-<button onclick="document.getElementById('teste3').style.display = 'block'"> Aparecer </button>
+					<h5>Podemos fazer o mesmo "efeito" com apenas um botão e usando uma function, no nosso caso essa function chama-se 
+					"mudaLampada()". </h5>
+					<img id="lampada1" src="imagens/lampada_apagada.jpg" style="width:100px">
+					<button class="btn btn-warning" onclick="mudaLampada()">Acender e Apagar </button>
+				</div>
+			
+				<div class="bloco">
+					<h3>Style direto nos botões</h3>
+					<p id="teste3">Olá Mundo </p>
+					<button class="btn btn-warning" onclick="document.getElementById('teste3').style.fontSize = '40px'"> Mudar Fonte </button>
+					<button class="btn btn-warning" onclick="document.getElementById('teste3').style.display = 'none'"> Esconder </button>
+					<button class="btn btn-warning" onclick="document.getElementById('teste3').style.display = 'block'"> Aparecer </button>
+				</div>
 
+				<div class="bloco">
+					<h3>Alert</h3>
+					<h5> Gerando um alerta usando window.alert() dentro de uma function... </h5>
+					<button class="btn btn-warning" onclick="alerta()"> Alerta ! </button>
+				</div>
+					
+				<div class="bloco">
+					<h3>Console.log</h3>
+					<h5> Utilizando console.log() para fazer testes, o valor desse método só é exibido no console do browser
+						(aperte F12 ou abra o console de seu browser).</h5>
+					<script>
+						console.log(5 + 6);
+					</script>
+					<p>* Geralmente ele é usado apenas para fazer algum debug ou teste no codigo. </p>
+				</div>
+			
+				<div class="bloco">
+					<h3>Alterando o DOM com Javascript</h3>
+					<h5>Podemos "escrever" no HTML utilizando javascript: </h5>
+					<h1 id="meuH"></h1>
+					<p id="meuP"></p>
+					<p>* Para ver o código, utilizar Inspecionar Elemento - Properties</p>
+				</div>
+			
+				<div class="bloco">
+					<h3>Typeof</h3>
+					<h5>Para sabermos o tipo de uma variável podemos utilizar o typeof</h5>
+				
+					<button class="btn btn-warning" onclick="verificaTipo()">Verificar Tipo</button>
+					<br/>
+					<br/>
+					<p id="teste5">John</p>
+					<p id="teste6">5</p>
+					<p id="teste7">7</p>
+					<p>* Em Javascript, se você tentar somar qualquer numero com uma string, o número será transformado em String também.
+					Por isso é necessário ficar bem atento quanto aos tipos de dados do JavaScript.</p>
+				
+					<h5>Os tipos de dados em JavaScript são bastantes dinâmicos, você pode por exemplo simplesmente declarar uma variável sem um tipo de
+						dado(ele ficará undefined) e poderá alterar depois, não é recomendado fazer isso de acordo com as boas práticas de programação.</h3>
+					<p id="var1">var = x;</p>
+					<p id="var2">var x = 5;</p>
+					<p id="var3">var x = "Joao"</p>
+					<button class="btn btn-warning" onclick="verificaTipo2()">Verificar Tipo de Dado</button>
+				
+				</div>
 
-<h3>Fazendo calculo no proprio html utilizando elementos com tags</h3>
-<p id="teste4"></p>
-<button onclick="document.getElementById('teste4').innerHTML = 5 + 5 ">Calcular </button>
-<p> ------------------------------- </p>
-<h3>Se não quiser utilizar botão, será mais conveniente utilizar document.write()</h3>
-<script>
-	document.write(5 + 5);
-</script>
+				<div class="bloco">
+				<h3>Strings</h3>
+					<p>Vamos tentar fazer uma soma maluca de um numero com a string JavaScript, insira qualquer número:</p>
+					<input id="n1" type="number"> + JavaScript = <output id="resultado" type="text" disabled="disabled"></output>
+					<button class="btn btn-warning" onclick="somaNumerosComString()">Calcular</button>
 
-<h3>Usando o document.write() depois que o HTML for totalmente carregado, ele deletará to Html existente
+					<br/><br/>
 
-<h1>Ola Mundo</h1>
-<p>Vamos testar se irá mesmo apagar !</p>
-<p>LEMBRE-SE, esse método tem essa funcionalidade para fazer testes apenas.... </p> 
-<button onclick="document.write(5 + 6)">Tente !</button>
+					<h5>Uma variável que será string recebe seu dado com aspas simples ou aspas duplas</h5>
+					<p>Exemplos:</p>
+					<p>var x = "João"</p>
+					<p>var x = 'João'</p>
+					<p>* Isso não vai influenciar em nada, mas pelas boas práticas de programação, sempre que for colocar um dado em uma string
+						o recomendável é utilizar aspas duplas (" ").
+					</p>
+				
+					<h5>Para referenciar um dado que em sua string contenha aspas, exemplo: Anderson "Spider" Silva, devemos nesse caso, sobrepor
+						as aspas, ficaria mais ou menos assim: var x = 'Anderson "Spider" Silva'</h5>
+					<p id="nomeUFC">Anderson Spider Silva</p>
+					<button class="btn btn-warning" onclick="colocaAspas()">Colocar Aspas</button>
 
-<p> ------------------------------- </p>
+				</div>
+			
+				<div class="bloco">
+					<h3>Booleans</h3>
+					<h5>Em JavaScript também existem os operadores Boleanos: </h5>
+					<p>Exemplo:</p>
+					<p>var x = 5;</p>
+					<p>var y = 5;</p>
+					<p>var z = 6;</p>
+					<p>(x == y)  Return true</p> 
+					<p>(x == z)  Return false</p>
+					<br>
+					Numero 1: <input id="numero1" type="number">
+					Numero 2: <input id="numero2" type="number">
+					<button class="btn btn-warning" onclick="verificaIgualdade()">Verificar Igualdade</button>
+					<p id="igualdade"></p>
+				</div>
+			
+				<div class="bloco">
+					<h3>Array</h3>
+					<h5>Array (ou vetor) basicamente é uma lista de dados dentro de uma variável. Em JavaScript existem
+					diversas maneiras de utilizar Arrays, veremos isso nas próximas sessões mais avançadas.</h5>
+					<p>Exemplo básico:</p>
+					<p>var Celulares = ["motoG", "iphone8", "samsungs8", "xiaomi123", "lg345"]</p>
+					<p>Cada celular está atrelado a uma posição da lista de Celulares(variável Celulares), sempre começa da posição 0 (zero)</p>
+					<p>Coloque um número de 0 a 4</p>
+					Posição: <input id="numArray" type="number"> <button class="btn btn-warning" onclick="verificaPosicaoArray()">Verificar posição no Array</button> <p id="verArray"></p>
+				</div>
+			
+				<div class="bloco">
+					<h3>Objeto</h3>
+					<h5>Objetos em JavaScript possuem coleções dinâmicas de chaves e valores de qualquer tipo de dado, é possível
+						adicionar ou remover propriedades a qualquer momento.</h5>
+				
+					<p>Exemplo:</p>
+					<p>var Carro = {marca="Toyota", ano="2017", preco="40.000", cor="branco", modelo="etios"}</p>
+					<p>Agora vamos modificar esses atributos ! (Preencha todos os campos)</p>
+					<div class="container">
+						<div class="row">
+							<div class="col-md-2">
+								<p>Marca: <span id="marca">Toyota</span></p>
+								<p>Ano: <span id="ano">2017</span></p>
+								<p>Preço: R$ <span id="preco">40.000</span></p>
+								<p>Cor: <span id="cor">Branco</span></p>
+								<p>Modelo: <span id="modelo">Etios</span></p>
+							</div>
+							<div class="col-md-2 objeto-p">
+								<p>Nova Marca:</p>
+								<p>Novo ano:</p>
+								<p>Novo Preço:</p>
+								<p>Nova Cor:</p> 
+								<p>Novo Modelo:</p>
+							</div>
+							<div class="col-md-8">
+								<div class="objeto-exemplo"><input id="novaMarca" type="text"></div>
+								<div class="objeto-exemplo"><input id="novoAno" type="number"></div>
+								<div class="objeto-exemplo"><input id="novoPreco" type="number"></div>
+								<div class="objeto-exemplo"><input id="novaCor" type="text"></div>
+								<div class="objeto-exemplo"><input id="novoModelo" type="text"></div>
+								<button class="btn btn-warning" onclick="mudarAtributosCarro()">Mudar Atributos</button>
+							</div>
+						</div>
+					</div>
+					<br/><br/>
+					<h5>Vamos descrever métodos para um objeto chamado Pessoa e colocar seus atributos em uma String</h5>
+					<p>Seu nome é Felipe, sobrenome Augusto, tem 26 anos e estuda na Fatec</p>
+				
+					<p id="objPessoa"></p>
+					<button class="btn btn-warning" onclick="concatenaPessoa()">Concatenar</button>
+					<br/><br/>
+					<h5>Pode-se acessar objetos chamando o objeto e sua propriedade.</h5>
+					<p>Exemplo: </p>
+					<p>pessoa.nome</p>
+					<p>pessoa.idade</p>
+					<p>pessoa.nomeCompleto()</p>
+					ou talvez dessa forma:
+					<p>pessoa["nome"]</p>
+					<p>pessoa["idade"]</p>
+				
+					Também podemos atribuir a uma variável:
+					<p>var aluno = pessoa.nomeCompleto()</p>
+				</div>
 
-<h3> Gerando um alerta usando window.alert() dentro de uma function... </h3>
-<button onclick="alerta()"> Alerta ! </button>
-
-
-<p> ------------------------------- </p>
-
-<h3> Utilizando console.log() para fazer testes, o valor desse método só é exibido no console do browser (aperte F12 ou abra o console de seu browser). </h3>
-<script>
-	console.log(5 + 6);
-</script>
-
-<p>Geralmente ele é usado apenas para fazer algum debug ou teste no codigo. </p>
-
-<p> ------------------------------- </p>
-
-<h3>Podemos "escrever" no Html utilizando javascript: </h3>
-
-<h1 id="meuH"></h1>
-<p id="meuP"></p>
-
-* Para ver o código, utilizar Inspecionar Elemento
-
-<p> ------------------------------- </p>
-
-<h3>Para sabermos o tipo de uma variavel podemos utilizar o typeof</h3>
-
-<button onclick="verificaTipo()">Verificar Tipo</button>
-<p id="teste5">John</p>
-<p id="teste6">5</p>
-<p id="teste7">7</p>
-
-<h3>Em Javascript, se você tentar somar qualquer numero com uma string, o número será transformado em String também.
-Por isso é necessário ficar bem atento quanto aos tipos de dados do JavaScript.(bugado)</h3>
-
-<p>Vamos tentar fazer uma soma maluca de um numero com a string JavaScript, insira o Numero:</p>
-<input id="n1" type="number"> + JavaScript = <output id="resultado" type="text" disabled="disabled">
-<button onclick="somaNumerosComString()">Calcular</button>
-
-
-<h3>Os tipos de dados em JavaScript são bastantes dinâmicos, você pode por exemplo simplesmente declarar uma variável sem um tipo de
-	dado(ele ficará undefined) e poderá alterar depois, não é recomendado fazer isso de acordo com as boas práticas de programação.</h3>
-	<p id="var1">var = x;</p>
-	<p id="var2">var x = 5;</p>
-	<p id="var3">var x = "Joao"</p>
-	<button onclick="verificaTipo2()">Verificar Tipo de Dado</button>
-
-<h3>Uma variavel que será string recebe seu dado com aspas simples ou aspas duplas</h3>
-<p>Exemplos:</p>
-<p>var x = "João"</p>
-<p>var x = 'João'</p>
-<p>Isso não vai influenciar em nada, mas pelas boas práticas de programação, sempre que for colocar um dado em uma string
-	o recomendável é utilizar aspas duplas (" ").
-</p>
-
-<h3>Para referenciar um dado que em sua string contenha aspas, exemplo: Anderson "Spider" Silva, devemos nesse caso, sobrepor
-	as aspas, ficaria mais ou menos assim: var x = 'Anderson "Spider" Silva'
-</h3>
-<p id="nomeUFC">Anderson Spider Silva</p>
-<button onclick="colocaAspas()">Colocar Aspas</button>
-
-<h3>Em JavaScript também existem os operadores Boleanos: </h3>
-<p>Exemplo:</p>
-<p>var x = 5;</p>
-<p>var y = 5;</p>
-<p>var z = 6;</p>
-<p>(x == y)  Return true</p> 
-<p>(x == z)  Return false</p>
-<br>
-Numero 1: <input id="numero1" type="number">
-Numero 2: <input id="numero2" type="number">
-<button onclick="verificaIgualdade()">Verificar Igualdade</button>
-<p id="igualdade"></p>
-
-
-<h3>Arrays (ou vetores, como queira chamar) basicamente é uma lista de dados dentro de uma variavel. Em JavaScript existem
-	diversas maneiras de utilizar Arrays, veremos isso nas próximas sessões mais avançadas.
-</h3>
-<p>Exemplo básico:</p>
-<p>var Celulares = ["motoG", "iphone8", "samsungs8", "xiaomi123", "lg345"]</p>
-<p>Cada celular está atrelado a uma posição da lista de Celulares(variável Celulares), sempre começa da posição 0 (zero)</p>
-<p>Coloque um número de 0 a 4</p>
-Posição: <input id="numArray" type="number"> <button onclick="verificaPosicaoArray()">Verificar posição no Array</button> <p id="verArray"></p>
-
-
-<h3>Objetos em JavaScript possuem coleções dinâmicas de chaves e valores de qaulquer tipo de dado, é possível
-	adicionar ou remover propriedades a qualquer momento.
-</h3>
-
-	<p>Exemplo:</p>
-	<p>var Carro = {marca="Toyota", ano="2017", preco="40.000", cor="branco", modelo="etios"}</p>
-	<p>Agora vamos modificar esses atributos ! (Preencha todos os campos)</p>
-	<p id="marca">Toyota</p>
-	<p id="ano">2017</p>
-	<p id="preco">40.000</p>
-	<p id="cor">branco</p>
-	<p id="modelo">etios</p>
-
-	Nova Marca: <input id="novaMarca" type="text">
-	Novo ano: <input id="novoAno" type="number">
-	Novo Preço: <input id="novoPreco" type="number">
-	Nova Cor: <input id="novaCor" type="text">
-	Novo Modelo: <input id="novoModelo" type="text">
-	<button onclick="mudarAtributosCarro()">Mudar Atributos</button>
-
-<h3>Uma função em JavaScript deve ser chamada junto com parenteses () para executar, ela pode ou não
-	retornar valores  bem como pode-se ou não passar valores para ela.
-</h3>
-
-<p>Exemplos:</p>
-<p>Calculando a média de 2 notas: </p>
-<p>(função SEM passagem de parâmetros)</p>
-<input id="nota1" type="number">
-<input id="nota2" type="number">
-<button onclick="calcMedia()">Calcular média</button>
-<p id="resultadoMedia"></p>
-
-<p>Transformando 100 graus Fahrenheit em X graus Celcius</p>
-<p>(função COM passagem de parâmetros)</p>
-<p id="grau"></p>
-
-<h3>Vamos descrever métodos para um objeto chamado Pessoa e colocar seus atributos em uma String</h3>
-<p>Seu nome é Felipe, sobrenome Augusto, tem 26 anos e estuda na Fatec</p>
-
-<p id="objPessoa"></p>
-<button onclick="concatenaPessoa()">Concatenar</button>
-
-<h3>Pode-se acessar objetos chamando o objeto e sua propriedade.</h3>
-<p>Exemplo: </p>
-<p>pessoa.nome</p>
-<p>pessoa.idade</p>
-<p>pessoa.nomeCompleto()</p>
-ou talvez dessa forma:
-<p>pessoa["nome"]</p>
-<p>pessoa["idade"]</p>
-
-Também podemos atribuir a uma variável:
-<p>var aluno = pessoa.nomeCompleto()</p>
-
+				<div class="bloco">
+					<h3>Tipos de Funções</h3>
+					<h5>Uma função em JavaScript deve ser chamada junto com parênteses () para executar, ela pode ou não
+						retornar valores  bem como pode-se ou não passar valores para ela.</h5>
+				
+					<p>Exemplos:</p>
+					<p>Calculando a média de 2 valores: </p>
+					<p>(função SEM passagem de parâmetros)</p>
+					<input id="nota1" type="number">
+					<input id="nota2" type="number">
+					<button class="btn btn-warning" onclick="calcMedia()">Calcular média</button>
+					<p id="resultadoMedia"></p>
+				
+					<p>Transformando 100 graus Fahrenheit em X graus Celcius</p>
+					<p>(função COM passagem de parâmetros)</p>
+					<p id="grau"></p>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
 </body>
 
 <script type="text/javascript" src="js/javascript.js"></script>

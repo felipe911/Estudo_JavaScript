@@ -17,8 +17,8 @@ function alerta(){
 }
 
 
-document.getElementById("meuH").innerHTML = "My First Page";
-document.getElementById("meuP").innerHTML = "My first paragraph.";
+document.getElementById("meuH").innerHTML = "Minha Primeira Página";
+document.getElementById("meuP").innerHTML = "Meu Primeiro Parágrafo.";
 
 
 function verificaTipo(){
@@ -126,6 +126,4 @@ function concatenaPessoa(){
 
 	document.getElementById("objPessoa").innerHTML = "Este é o " + pessoa.nomeCompleto() + " ele tem "
 	+ pessoa.idade + " anos" + " e " + "estuda na " + pessoa.faculdade; 
-
-
 }
