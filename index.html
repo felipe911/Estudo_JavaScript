@@ -259,6 +259,62 @@
 					<p>(função COM passagem de parâmetros)</p>
 					<p id="grau"></p>
 				</div>
+
+				<div class="bloco">
+					<h3>Arguments</h3>
+					<h5>O arguments pode ser usado em uma função que não se sabe a quantidade de parâmetros que ela recebe.
+						Por Exemplo:</h5>
+
+					<p>calcNota(2,10);</p>
+					<p>calcNota2(5, 5, 8, 10);</p>
+
+					<p>Resultado calcNota: <span id="resultadoCalcNota"></span></p>
+					<p>Resultado calcNota2: <span id="resultadoCalcNota2"></span></p>
+
+					<p>* Para esse exemplo foi usado uma função IIFE, ela se auto invoca e não polui o código no aspecto global.</p>
+				</div>
+
+				<div class="bloco">
+					<h3>Exemplo Prático: Classificação de IMC</h3> 
+					<h5>Exemplo simples para aprendizado</h5>
+					<span>Peso: </span><input id="peso" type="number">
+					<span>Altura: </span><input id="altura" type="number">
+					<button class="btn btn-warning" onclick="verificaIMC()">Calcular IMC</button>
+					<P>IMC: <span id="imc"></span></P>
+					<p>Classificação: <span id="classificacao"></span></p>
+				</div>
+
+				<div class="bloco">
+					<h3>Manipulação do DOM</h3>
+					<h5>Document.getElementbyID</h5>
+					<p>Podemos manipular o DOM (Document Object Model) através do javascript. Vamos ver exemplos:</p>
+					
+					<p id="p-DOM">Olá eu sou um parágrafo com um ID, serei manipulado por você!</p>
+
+					<p>Escreva qualquer coisa para manipular o parágrafo acima...</p>
+					<input id="I-DOM" type="text">
+					<button class="btn btn-warning" onclick="manipulaDOM()">Manipular o DOM com Id</button>
+					<br/><br/>
+					<h5>Document.getElementByClassName</h5>
+					<p>Também Podemos manipular o DOM através das classes atribuídas a um objeto do DOM</p>
+
+					<span>Frase 0: </span><p class="frase">Se deixar um lobo vivo, as ovelhas nunca estarão seguras.</p>
+					<span>Frase 1: </span><p class="frase">As coisas que eu faço por amor.</p>
+					<span>Frase 2: </span><p class="frase">O homem que passa a sentença deve brandir a espada.</p>
+					<span>Frase 3: </span><p class="frase">Você não sabe nada, Jon Snow.</p>
+					<span>Frase 4: </span><p class="frase">Quando você joga o jogo dos tronos, você ganha ou morre.</p>
+					<br/>
+					<p>Escreva alguma coisa para substituir uma das frases acima. Para isso escolha o número da frase que você irá trocar (0 a 4)</p>
+					<input id="C-DOM" type="text">
+					<form class="RB-DOM">
+						0 <input name="Numero-Frase" type="radio" value="0" checked>
+						1 <input name="Numero-Frase" type="radio" value="1">
+						2 <input name="Numero-Frase" type="radio" value="2">
+						3 <input name="Numero-Frase" type="radio" value="3">
+						4 <input name="Numero-Frase" type="radio" value="4">
+					</form>
+					<button class="btn btn-warning" onclick="manipulaClasseDOM()">Manipular DOM com Classes</button>
+				</div>
 			</div>
 		</div>
 	</div>

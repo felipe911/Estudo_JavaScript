@@ -127,3 +127,73 @@ function concatenaPessoa(){
 	document.getElementById("objPessoa").innerHTML = "Este é o " + pessoa.nomeCompleto() + " ele tem "
 	+ pessoa.idade + " anos" + " e " + "estuda na " + pessoa.faculdade; 
 }
+
+
+(function(){
+	function calcularNotas(){
+		var total = 0;
+		var qtd = arguments.length;
+		var x = 0;
+		
+		while(typeof arguments[x] === 'number'){
+			total += arguments[x];
+			x++;
+		}
+		return total / qtd;
+	}
+	var nota1 = calcularNotas(2, 10);
+	var nota2 = calcularNotas(5, 5, 8, 10);
+	
+	document.getElementById("resultadoCalcNota").innerHTML = nota1;
+	document.getElementById("resultadoCalcNota2").innerHTML = nota2;
+})()
+	
+function verificaIMC(){
+
+	var peso = document.getElementById('peso').value;
+	var altura = document.getElementById('altura').value;
+	
+	function calcIMC(peso, altura){
+		var imc = peso / (altura * altura);
+		return imc;
+	}
+	
+	function classificaIMC(){
+		if(imc <= 16.9){
+			return "Muito Abaixo do Peso"
+		} else if(imc <= 18.4){
+			return "Abaixo do Peso"
+		} else if(imc <= 24.9){
+			return "Peso Normal"
+		} else if(imc <= 29.9){
+			return "Acima do Peso"
+		} else if(imc <= 34.9){
+			return "Obesidade Grau 1"
+		} else if(imc <= 40){
+			return "Obesidade Grau 2"
+		} else {
+			return "Obesidade Grau 3"
+		}
+	}
+	
+	var imc = calcIMC(peso,altura);
+	var classificacao = classificaIMC(imc);
+	
+	document.getElementById('imc').innerHTML = imc.toFixed(2);
+	document.getElementById('classificacao').innerHTML = classificacao;
+}
+	
+function manipulaDOM(){
+	document.getElementById('p-DOM').innerHTML = document.getElementById('I-DOM').value;
+}
+
+function manipulaClasseDOM(){
+	var numeroFrase = document.getElementsByName('Numero-Frase');
+	var fraseModificada = document.getElementById('C-DOM').value;
+
+	for(var i = 0 ; i<numeroFrase.length; i++){
+		if(numeroFrase[i].checked){
+			document.getElementsByClassName('frase')[numeroFrase[i].value].textContent = fraseModificada;
+		}
+	}
+}
