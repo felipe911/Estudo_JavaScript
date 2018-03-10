@@ -23,10 +23,7 @@
 		<div class="row">
 			<div class="col-md-12">
 				<h1>Estudos com JavaScript (V.1.1)</h1>
-				<h3>Este estudo tem como base o site <a href="http:\\www.w3schools.com">www.w3schools.com</a> para início de aprendizado da linguagem <span class="destaque-texto">JavaScript</span>,
-					para facilitar, colocarei descrições o mais simples possível, visando o melhor entendimento da linguagem.
-					Inicialmente como se trata de um arquivo para fins de aprendizado, nenhum design mais amigável e "bonito" será criado.
-					Para as próximas versões o refinamento será atingido.
+				<h3>Este estudo tem como base o site <a href="http:\\www.w3schools.com">www.w3schools.com</a> para início de aprendizado da linguagem <span class="destaque-texto">JavaScript</span>, para facilitar, colocarei descrições o mais simples possível, visando o melhor entendimento da linguagem. Inicialmente como se trata de um arquivo para fins de aprendizado, nenhum design mais amigável e "bonito" será criado. Para as próximas versões o refinamento será atingido.
 				</h3>
 			</div>
 		</div>
@@ -126,11 +123,9 @@
 					<p id="teste5">John</p>
 					<p id="teste6">5</p>
 					<p id="teste7">7</p>
-					<p>* Em Javascript, se você tentar somar qualquer numero com uma string, o número será transformado em String também.
-					Por isso é necessário ficar bem atento quanto aos tipos de dados do JavaScript.</p>
+					<p>* Em Javascript, se você tentar somar qualquer numero com uma string, o número será transformado em String também. Por isso é necessário ficar bem atento quanto aos tipos de dados do JavaScript.</p>
 				
-					<h5>Os tipos de dados em JavaScript são bastantes dinâmicos, você pode por exemplo simplesmente declarar uma variável sem um tipo de
-						dado(ele ficará undefined) e poderá alterar depois, não é recomendado fazer isso de acordo com as boas práticas de programação.</h3>
+					<h5>Os tipos de dados em JavaScript são bastantes dinâmicos, você pode por exemplo simplesmente declarar uma variável sem um tipo de dado(ele ficará undefined) e poderá alterar depois, não é recomendado fazer isso de acordo com as boas práticas de programação.</h3>
 					<p id="var1">var = x;</p>
 					<p id="var2">var x = 5;</p>
 					<p id="var3">var x = "Joao"</p>
@@ -258,6 +253,157 @@
 					<p>Transformando 100 graus Fahrenheit em X graus Celcius</p>
 					<p>(função COM passagem de parâmetros)</p>
 					<p id="grau"></p>
+				</div>
+
+				<div class="bloco">
+					<h3>Arguments</h3>
+					<h5>O arguments pode ser usado em uma função que não se sabe a quantidade de parâmetros que ela recebe.
+						Por Exemplo:</h5>
+
+					<p>calcNota(2,10);</p>
+					<p>calcNota2(5, 5, 8, 10);</p>
+
+					<p>Resultado calcNota: <span id="resultadoCalcNota"></span></p>
+					<p>Resultado calcNota2: <span id="resultadoCalcNota2"></span></p>
+
+					<p>* Para esse exemplo foi usado uma função IIFE, ela se auto invoca e não polui o código no aspecto global.</p>
+				</div>
+
+				<div class="bloco">
+					<h3>Exemplo Prático: Classificação de IMC</h3> 
+					<h5>Exemplo simples para aprendizado</h5>
+					<span>Peso: </span><input id="peso" type="number">
+					<span>Altura: </span><input id="altura" type="number">
+					<button class="btn btn-warning" onclick="verificaIMC()">Calcular IMC</button>
+					<P>IMC: <span id="imc"></span></P>
+					<p>Classificação: <span id="classificacao"></span></p>
+				</div>
+
+				<div class="bloco">
+					<h3>Manipulação do DOM</h3>
+					<h5>Document.getElementbyID</h5>
+					<p>Podemos manipular o DOM (Document Object Model) através do javascript. Vamos ver exemplos:</p>
+					
+					<p id="p-DOM">Olá eu sou um parágrafo com um ID, serei manipulado por você!</p>
+
+					<p>Escreva qualquer coisa para manipular o parágrafo acima...</p>
+					<input id="I-DOM" type="text">
+					<button class="btn btn-warning" onclick="manipulaDOM()">Manipular o DOM com Id</button>
+					<br/><br/>
+					<h5>Document.getElementsByClassName</h5>
+					<p>Também Podemos manipular o DOM através das classes atribuídas a um objeto do DOM</p>
+
+					<span>Frase 0: </span><p class="frase">Se deixar um lobo vivo, as ovelhas nunca estarão seguras.</p>
+					<span>Frase 1: </span><p class="frase">As coisas que eu faço por amor.</p>
+					<span>Frase 2: </span><p class="frase">O homem que passa a sentença deve brandir a espada.</p>
+					<span>Frase 3: </span><p class="frase">Você não sabe nada, Jon Snow.</p>
+					<span>Frase 4: </span><p class="frase">Quando você joga o jogo dos tronos, você ganha ou morre.</p>
+					<br/>
+					<p>Escreva alguma coisa para substituir uma das frases acima. Para isso escolha o número da frase que você irá trocar (0 a 4)</p>
+					<input id="C-DOM" type="text">
+					<form class="RB-DOM">
+						0 <input name="Numero-Frase" type="radio" value="0" checked>
+						1 <input name="Numero-Frase" type="radio" value="1">
+						2 <input name="Numero-Frase" type="radio" value="2">
+						3 <input name="Numero-Frase" type="radio" value="3">
+						4 <input name="Numero-Frase" type="radio" value="4">
+					</form>
+					<button class="btn btn-warning" onclick="manipulaClasseDOM()">Manipular DOM com Classes</button>
+				</div>
+
+				<div class="bloco">
+					<h3>QuerySelector, QuerySelectorAll e Document.getElementsByTagName</h3>
+					<h5>São utilizados também para manipular o DOM, possuem semelhanças com os seletores em css.</h5>
+					<p>Outra maneira de referenciar um objeto no DOM pode ser com o comando <b>document.querySelector(#idmain p)</b>, este comando
+					irá referenciar o primeiro parágrafo da tag Main, já o <b>QuerySelectorAll</b> funciona parecido com o getElementsByClassName onde é necessário utilizar um índice (vetor) para relacionar o objeto esperado. Isso é usado também para o comando <b>getElementsByTagName</b>.</p>
+					<h5>Outros Exemplos:</h5>
+					<input type="text" id="nomeNegrito" placeholder="Digite seu nome">
+					<button class="btn btn-warning" onclick="converteNomeNegrito()">Clique!</button>
+					<span class="nomeNegritoAlterado"></span>
+					<br/><br/>
+					<p>* No exemplo acima, foi aplicado a tag "strong". Temos que adicionar a tag no Javascript e usar o atributo innerHTML para que o DOM interprete o texto junto com a tag, se colocassemos o atributo textContent, o DOM interpretaria a tag "strong" como fosse um texto.
+					</p>
+					<br/>
+					<input type="text" id="nomePessoa" placeholder="Seu Nome">
+					<input type="text" id="sobrenomePessoa" placeholder="Sobrenome">
+					<button class="btn btn-warning" onclick="concatNomeSobrenome()">Concatenar</button>
+					<br/>
+					<span id="mostraNome"></span>
+				</div>
+
+				<div class="bloco">
+					<div class="container">
+						<h3>Utilizando valores do DOM para calcular Médias</h3>
+						<h5>Média dos alunos</h5>
+						<table class="table js-tabela">
+							<thead>
+								<tr>
+									<th>Nome</th>
+									<th>Nota 1</th>
+									<th>Nota 2</th>
+									<th>Nota 3</th>
+									<th>Nota 4</th>
+									<th>Média</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr class="aluno" >
+									<td class="aluno-nome">Gertrude</td>
+									<td class="aluno-n1">10</td>
+									<td class="aluno-n2">8.5</td>
+									<td class="aluno-n3">9</td>
+									<td class="aluno-n4">7.5</td>	
+									<td class="aluno-m"></td>
+								</tr>
+								<tr class="aluno" >
+									<td class="aluno-nome">Rey</td>
+									<td class="aluno-n1">5</td>
+									<td class="aluno-n2">8.5</td>
+									<td class="aluno-n3">6.5</td>
+									<td class="aluno-n4">7.5</td>
+									<td class="aluno-m"></td>
+								</tr>
+								<tr class="aluno" >
+									<td class="aluno-nome">Jessilda</td>
+									<td class="aluno-n1">8</td>
+									<td class="aluno-n2">8.5</td>
+									<td class="aluno-n3">7</td>
+									<td class="aluno-n4">7.5</td>
+									<td class="aluno-m"></td>
+								</tr>
+								<tr class="aluno">
+									<td class="aluno-nome">Lindóia</td>
+									<td class="aluno-n1">6.5</td>
+									<td class="aluno-n2">8.5</td>
+									<td class="aluno-n3">10</td>
+									<td class="aluno-n4">7.5</td>
+									<td class="aluno-m"></td>
+								</tr>
+								<tr class="aluno" >
+									<td class="aluno-nome">Creysson</td>
+									<td class="aluno-n1">10</td>
+									<td class="aluno-n2">9.5</td>
+									<td class="aluno-n3">10</td>
+									<td class="aluno-n4">8.5</td>
+									<td class="aluno-m"></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+
+				<div class="bloco">
+					<div class="container texto-modificando">
+						<h3>Modificando textos com JavaScript</h3>
+						<p class="p-modificando">Olá meu nome é Felipe, tenho 26 anos e quero aprender JavaScript, pretendo me especializar em front-end para um dia trabalhar na área, faço Análise e Desenvolvimento de Sistemas na Fatec Sorocaba, estou no quinto semestre e pretendo me formar nesse ano ainda. Este é meu site para aprendizado das linguagens que irão me ajudar a atingir meu objetivo, ainda está em construção mas está sendo muito proveitoso, a cada dia que passa tenho vontade de aprender cada vez mais.</p>
+						<br/>
+						Palavra a ser substituída: <input type="text" id="palavraParaSubstituir">
+						Palavra que você quer colocar no texto: <input type="text" id="palavraInserida">
+						<br/><br/>
+						<button class="btn btn-warning" onclick="substituirPalavra()">Substituir!</button>
+						<br/><br/>
+						<p>* Você pode inserir partes de palavras mas vai ficar bizarro !</p>
+					</div>
 				</div>
 			</div>
 		</div>

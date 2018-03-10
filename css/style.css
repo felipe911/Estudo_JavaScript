@@ -12,6 +12,9 @@
 .bloco h3{
     padding-bottom: 15px
 }
+.RB-DOM input{
+    margin-right: 20px;
+}
 
 /* Textos */
 
@@ -24,7 +27,14 @@
 #cabecalho h3{
     text-align: justify;
 }
-
+.texto-modificando{
+    text-align: center;
+}
+.p-modificando{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
+    text-align: justify;
+    padding: 0 200px 0 200px;
+}
 /* Exemplos */
 
 .objeto-exemplo{
