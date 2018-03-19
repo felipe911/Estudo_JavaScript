@@ -255,3 +255,16 @@ function substituirPalavra(){
 		document.querySelector('.bloco .texto-modificando .p-modificando').textContent = novoTexto;
 	}
 }
+
+function funcao1(){
+	alert("Olá Mundo!");
+}
+
+(function(){
+	document.getElementById('meuBotao').addEventListener('click', funcao1);
+	document.getElementById('meuBotao').addEventListener('click', funcao2);
+
+	function funcao2(){
+		alert("Olá Mundo denovo !");
+	}
+})()

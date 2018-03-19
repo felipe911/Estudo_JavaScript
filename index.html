@@ -143,8 +143,10 @@
 
 					<h5>Uma variável que será string recebe seu dado com aspas simples ou aspas duplas</h5>
 					<p>Exemplos:</p>
-					<p>var x = "João"</p>
-					<p>var x = 'João'</p>
+					<div class="container-codigo">
+						<p>var x = "João"</p>
+						<p>var x = 'João'</p>
+					</div>
 					<p>* Isso não vai influenciar em nada, mas pelas boas práticas de programação, sempre que for colocar um dado em uma string
 						o recomendável é utilizar aspas duplas (" ").
 					</p>
@@ -158,13 +160,15 @@
 			
 				<div class="bloco">
 					<h3>Booleans</h3>
-					<h5>Em JavaScript também existem os operadores Boleanos: </h5>
+					<h5>Em JavaScript também existem os operadores Boleanos.</h5>
 					<p>Exemplo:</p>
-					<p>var x = 5;</p>
-					<p>var y = 5;</p>
-					<p>var z = 6;</p>
-					<p>(x == y)  Return true</p> 
-					<p>(x == z)  Return false</p>
+					<div class="container-codigo">
+						<p>var x = 5;</p>
+						<p>var y = 5;</p>
+						<p>var z = 6;</p>
+						<p>(x == y)  Return true</p> 
+						<p>(x == z)  Return false</p>
+					</div>
 					<br>
 					Numero 1: <input id="numero1" type="number">
 					Numero 2: <input id="numero2" type="number">
@@ -177,7 +181,9 @@
 					<h5>Array (ou vetor) basicamente é uma lista de dados dentro de uma variável. Em JavaScript existem
 					diversas maneiras de utilizar Arrays, veremos isso nas próximas sessões mais avançadas.</h5>
 					<p>Exemplo básico:</p>
-					<p>var Celulares = ["motoG", "iphone8", "samsungs8", "xiaomi123", "lg345"]</p>
+					<div class="container-codigo">	
+						<p>var Celulares = ["motoG", "iphone8", "samsungs8", "xiaomi123", "lg345"]</p>
+					</div>
 					<p>Cada celular está atrelado a uma posição da lista de Celulares(variável Celulares), sempre começa da posição 0 (zero)</p>
 					<p>Coloque um número de 0 a 4</p>
 					Posição: <input id="numArray" type="number"> <button class="btn btn-warning" onclick="verificaPosicaoArray()">Verificar posição no Array</button> <p id="verArray"></p>
@@ -189,7 +195,9 @@
 						adicionar ou remover propriedades a qualquer momento.</h5>
 				
 					<p>Exemplo:</p>
-					<p>var Carro = {marca="Toyota", ano="2017", preco="40.000", cor="branco", modelo="etios"}</p>
+					<div class="container-codigo">
+						<p>var Carro = {marca="Toyota", ano="2017", preco="40.000", cor="branco", modelo="etios"}</p>
+					</div>
 					<p>Agora vamos modificar esses atributos ! (Preencha todos os campos)</p>
 					<div class="container">
 						<div class="row">
@@ -226,15 +234,21 @@
 					<br/><br/>
 					<h5>Pode-se acessar objetos chamando o objeto e sua propriedade.</h5>
 					<p>Exemplo: </p>
-					<p>pessoa.nome</p>
-					<p>pessoa.idade</p>
-					<p>pessoa.nomeCompleto()</p>
+					<div class="container-codigo">
+						<p>pessoa.nome</p>
+						<p>pessoa.idade</p>
+						<p>pessoa.nomeCompleto()</p>
+					</div>
 					ou talvez dessa forma:
-					<p>pessoa["nome"]</p>
-					<p>pessoa["idade"]</p>
-				
+
+					<div class="container-codigo">
+						<p>pessoa["nome"]</p>
+						<p>pessoa["idade"]</p>
+					</div>
 					Também podemos atribuir a uma variável:
-					<p>var aluno = pessoa.nomeCompleto()</p>
+					<div class="container-codigo">
+						<p>var aluno = pessoa.nomeCompleto()</p>
+					</div>
 				</div>
 
 				<div class="bloco">
@@ -259,9 +273,11 @@
 					<h3>Arguments</h3>
 					<h5>O arguments pode ser usado em uma função que não se sabe a quantidade de parâmetros que ela recebe.
 						Por Exemplo:</h5>
-
-					<p>calcNota(2,10);</p>
-					<p>calcNota2(5, 5, 8, 10);</p>
+					
+					<div class="container-codigo">
+						<p>calcNota(2,10);</p>
+						<p>calcNota2(5, 5, 8, 10);</p>
+					</div>
 
 					<p>Resultado calcNota: <span id="resultadoCalcNota"></span></p>
 					<p>Resultado calcNota2: <span id="resultadoCalcNota2"></span></p>
@@ -404,6 +420,22 @@
 						<br/><br/>
 						<p>* Você pode inserir partes de palavras mas vai ficar bizarro !</p>
 					</div>
+				</div>
+
+				<div class="bloco">
+					<h3>DOM lvl 0 vs DOM lvl 2</h3>
+					<h5>Diferenças entre o uso do onClick e addEventListener</h5>
+					<p>A grande diferença entre os dois é que com o onClick, só se pode passar 1 função por vez, já com o addEventListener podemos passar mais de uma função, atribui um manipulador de eventos ao elemento especificado. Exemplo de Código:</p>
+
+					<div class="container-codigo">
+						<p>document.getElementById("meuBotao").addEventListener("click", funcao1);</p>
+						<p>document.getElementById("meuBotao").addEventListener("click", funcao2);</p>
+					</div>
+					<p>Utilizando DOM LVL 0 e onClick</p>
+					<button class="btn btn-warning" id="seuBotao" onclick="funcao1()">Executa só uma Função</button>
+					<br/><br/>
+					<p>Utilizando DOM LVL 2 e addEventListener</p>
+					<button class="btn btn-warning" id="meuBotao">Executa 2 Funções</button>
 				</div>
 			</div>
 		</div>
